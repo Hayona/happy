@@ -23,7 +23,8 @@
 
 
 	// Someone clicks yes
-	document.getElementsByClassName( 'js-hayona-happy-yes' )[0].addEventListener('click', function() {
+	document.getElementsByClassName( 'js-hayona-happy-yes' )[0].addEventListener('click', function(e) {
+		e.preventDefault();
 		hideElement( 'hayona-happy__form' );
 		showElement( 'hayona-happy__thanks' );
 
@@ -32,7 +33,8 @@
 	}, false);
 
 	// Someone clicks no
-	document.getElementsByClassName( 'js-hayona-happy-no' )[0].addEventListener('click', function() {
+	document.getElementsByClassName( 'js-hayona-happy-no' )[0].addEventListener('click', function(e) {
+		e.preventDefault();
 		hideElement( 'hayona-happy__form' );
 		showElement( 'hayona-happy__feedback' );
 
@@ -41,7 +43,8 @@
 	}, false);
 
 	// Someone sends feedback
-	document.getElementsByClassName( 'js-hayona-happy-thanks' )[0].addEventListener('click', function() {
+	document.getElementsByClassName( 'js-hayona-happy-thanks' )[0].addEventListener('click', function(e) {
+		e.preventDefault();
 		hideElement( 'hayona-happy__feedback' );
 		showElement( 'hayona-happy__thanks' );
 
