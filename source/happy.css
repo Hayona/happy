@@ -1,0 +1,61 @@
+/* Answers */
+
+.hayona-happy__answers {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.hayona-happy__answers:after {
+	content: ".";
+	display: block;
+	height: 0;
+	visibility: hidden;
+	clear: both;
+}
+
+.hayona-happy__answers > li {
+	float: left;
+	margin-left: 10px;
+}
+
+.hayona-happy__answers > li:first-child {
+	margin-left: 0;
+}
+
+
+/* Buttons */
+
+.hayona-happy__button {
+	display: inline-block;
+	margin: 0;
+	padding: 10px 20px;
+	box-shadow: 0 2px 1px rgba(0,0,0,.1), 0 0 2px rgba(0,0,0,0.1);
+	background-color: #eee;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: all 0.2s ease;
+	color: #444;
+}
+
+.hayona-happy__button:hover {
+	box-shadow: 0 3px 2px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,0.1);
+	background-color: #fefefe;
+}
+
+
+/* Forms */
+
+button {
+	border: 0;
+	font: 16px/1.4 Arial, sans-serif;
+	cursor: pointer;
+}
+
+textarea,
+input[type=text] {
+	margin: 0 0 10px;
+	border: 1px solid #ccc;
+	width: 100%;
+	font: 16px/1.4 Arial, sans-serif;
+}

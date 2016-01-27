@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+   
+<head>
+	<title>happy by Hayona &mdash; demo</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	
+
+</head>
+
+<body>
+	<!-- Add Google Tag Manager script here -->
+
+	<div class="body__wrapper">
+		<div class="body__header">
+			<img src="hayona.svg" alt="Hayona">
+		</div>
+		<div class="body__main">
+			
+			<!-- Start HTML widget -->
+			<div class="hayona-happy">
+				<div class="hayona-happy__form" style="display: none;">
+					<h2>Was this article helpful?</h2>
+					<ul class="hayona-happy__answers">
+						<li><a class="hayona-happy__button js-hayona-happy-yes analytics-satisfied-yes" href="#">Yes</a></li>
+						<li><a class="hayona-happy__button js-hayona-happy-no analytics-satisfied-no" href="#">No</a></li>
+					</ul>
+				</div>
+				<div class="hayona-happy__feedback" style="display: none;">
+					<h2>How can we improve?</h2>
+					<textarea name="customer-feedback" id="customer-feedback" cols="10" rows="3"></textarea>
+					<button class="hayona-happy__button js-hayona-happy-thanks analytics-satisfied-comment">Send feedback</button>
+				</div>
+				<div class="hayona-happy__thanks" style="display: none;">
+					<h2>Thanks for your feedback!</h2>
+				</div>
+			</div>
+			<!-- End HTML widget -->
+
+		</div>
+		<!-- For test purposes: Remove session cookie -->
+		<small><a class="js-satisfaction-remove" href="#" onclick="removeSessionCookie()">
+			(Remove session cookie)
+		</a></small>
+		<!-- End remove session cookie-->
+	</div>
+
+	<!-- Demo assets -->
+	<link rel="stylesheet" href="./demo.css" media="screen">
+	<script>
+		var removeSessionCookie = function() {
+			Cookies.remove('hayona_happy');
+		}
+	</script>
+
+	<!-- Widget assets -->
+	<link rel="stylesheet" href="../source/happy.css" media="screen">
+	<script src="../source/bower_components/js-cookie/src/js.cookie.js"></script>
+	<script src="../source/happy.js"></script>
+	<!--script src="../source/min/happy-min.js"></script-->
+</body>
+
+</html>
