@@ -1,8 +1,5 @@
 (function () {
 	
-	var hasGivenFeedback = Cookies.get('hayona_happy');
-
-
 	var showElement = function( className ) {
 		var el = document.getElementsByClassName( className )[0];
 		el.style.display = 'block';
@@ -14,12 +11,8 @@
 	};
 
 
-	// Show the form
-	if( hasGivenFeedback !== 'true' ) {
-		showElement( 'hayona-happy__form' );
-	} else {
-		showElement( 'hayona-happy__thanks' );
-	}
+	// Show the form if JavaScript is enabled in the browser
+	showElement( 'hayona-happy__form' );
 
 
 	// Someone clicks yes
@@ -27,9 +20,6 @@
 		e.preventDefault();
 		hideElement( 'hayona-happy__form' );
 		showElement( 'hayona-happy__thanks' );
-
-		// Users are allowed to vote once per session
-		Cookies.set('hayona_happy', 'true');
 	}, false);
 
 	// Someone clicks no
@@ -37,9 +27,6 @@
 		e.preventDefault();
 		hideElement( 'hayona-happy__form' );
 		showElement( 'hayona-happy__feedback' );
-
-		// Users are allowed to vote once per session
-		Cookies.set('hayona_happy', 'true');
 	}, false);
 
 	// Someone sends feedback
@@ -47,9 +34,6 @@
 		e.preventDefault();
 		hideElement( 'hayona-happy__feedback' );
 		showElement( 'hayona-happy__thanks' );
-
-		// Users are allowed to vote once per session
-		Cookies.set('hayona_happy', 'true');
 	}, false);
 
 })();

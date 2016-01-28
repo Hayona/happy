@@ -41,91 +41,6 @@
 		"randomFootnoteNumbers": 0,
 		"useCompatibilityMode": 0
 		},
-	"\/source\/bower_components\/js-cookie\/bower.json": {
-		"fileType": 524288,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/source\/bower_components\/js-cookie\/bower.json",
-		"orderOutput": 0,
-		"outputAbbreviatedPath": "\/source\/bower_components\/js-cookie\/bower-min.json",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1
-		},
-	"\/source\/bower_components\/js-cookie\/CONTRIBUTING.md": {
-		"criticStyle": 0,
-		"enableFootnotes": 1,
-		"enableLabels": 1,
-		"enableSmartQuotes": 1,
-		"escapeLineBreaks": 0,
-		"fileType": 4096,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/source\/bower_components\/js-cookie\/CONTRIBUTING.md",
-		"maskEmailAddresses": 1,
-		"outputAbbreviatedPath": "\/source\/bower_components\/js-cookie\/CONTRIBUTING.html",
-		"outputFormat": 0,
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 0,
-		"parseMetadata": 1,
-		"processHTML": 0,
-		"randomFootnoteNumbers": 0,
-		"useCompatibilityMode": 0
-		},
-	"\/source\/bower_components\/js-cookie\/README.md": {
-		"criticStyle": 0,
-		"enableFootnotes": 1,
-		"enableLabels": 1,
-		"enableSmartQuotes": 1,
-		"escapeLineBreaks": 0,
-		"fileType": 4096,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/source\/bower_components\/js-cookie\/README.md",
-		"maskEmailAddresses": 1,
-		"outputAbbreviatedPath": "\/source\/bower_components\/js-cookie\/README.html",
-		"outputFormat": 0,
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 0,
-		"parseMetadata": 1,
-		"processHTML": 0,
-		"randomFootnoteNumbers": 0,
-		"useCompatibilityMode": 0
-		},
-	"\/source\/bower_components\/js-cookie\/SERVER_SIDE.md": {
-		"criticStyle": 0,
-		"enableFootnotes": 1,
-		"enableLabels": 1,
-		"enableSmartQuotes": 1,
-		"escapeLineBreaks": 0,
-		"fileType": 4096,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/source\/bower_components\/js-cookie\/SERVER_SIDE.md",
-		"maskEmailAddresses": 1,
-		"outputAbbreviatedPath": "\/source\/bower_components\/js-cookie\/SERVER_SIDE.html",
-		"outputFormat": 0,
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 0,
-		"parseMetadata": 1,
-		"processHTML": 0,
-		"randomFootnoteNumbers": 0,
-		"useCompatibilityMode": 0
-		},
-	"\/source\/bower_components\/js-cookie\/src\/js.cookie.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/source\/bower_components\/js-cookie\/src\/js.cookie.js",
-		"outputAbbreviatedPath": "\/source\/bower_components\/js-cookie\/src\/min\/js.cookie-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
 	"\/source\/happy.css": {
 		"fileType": 16,
 		"ignore": 0,
@@ -180,14 +95,6 @@
 	],
 "lastSavedByUser": "Leon Korteweg",
 "manualImportLinks": {
-	"\/source\/happy.js": [
-		{
-			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/source\/bower_components\/js-cookie\/src\/js.cookie.js",
-			"position": 0,
-			"type": 0
-			}
-		]
 	},
 "projectAttributes": {
 	"bowerAbbreviatedPath": "source",
