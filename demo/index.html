@@ -4,7 +4,7 @@
 <head>
 	<title>happy by Hayona &mdash; demo</title>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="viewport" content="width=device-width,ial-scale=1.0" />
 
 	
 
@@ -12,6 +12,15 @@
 
 <body>
 	<!-- Add Google Tag Manager script here -->
+	<!-- Google Tag Manager -->
+	<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5T47LN"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-5T47LN');</script>
+	<!-- End Google Tag Manager -->
 
 	<div class="body__wrapper">
 		<div class="body__header">
@@ -19,24 +28,58 @@
 		</div>
 		<div class="body__main">
 			
+			<h2>Vraag 1 inhoud</h2>
+
 			<!-- Start HTML widget -->
-			<div class="hayona-happy">
+			<div id="test-widget-001" class="hayona-happy">
 				<div class="hayona-happy__form" style="display: none;">
-					<h2>Was this article helpful?</h2>
+					<div class="hayona-happy__title">Was this article helpful?</div>
 					<ul class="hayona-happy__answers">
 						<li><a class="hayona-happy__button js-hayona-happy-yes analytics-satisfied-yes" href="#">Yes</a></li>
 						<li><a class="hayona-happy__button js-hayona-happy-no analytics-satisfied-no" href="#">No</a></li>
 					</ul>
 				</div>
 				<div class="hayona-happy__feedback" style="display: none;">
-					<h2>How can we improve?</h2>
-					<textarea name="customer-feedback" id="customer-feedback" cols="10" rows="3"></textarea>
+					<div class="hayona-happy__title">How can we improve?</div>
+					<textarea name="customer-feedback" class="js-hayona-happy-customer-feedback" cols="10" rows="3"></textarea>
 					<button class="hayona-happy__button js-hayona-happy-thanks analytics-satisfied-comment">Send feedback</button>
 				</div>
 				<div class="hayona-happy__thanks" style="display: none;">
-					<h2>Thanks for your feedback!</h2>
+					<div class="hayona-happy__title">Thanks for your feedback!</div>
 				</div>
 			</div>
+			<script>
+				document.addEventListener("DOMContentLoaded", function() {
+					var widget = new Happy( 'test-widget-001', 'Tevredenheid FAQ', 'Vraag 1 inhoud' );
+				});
+			</script>
+			<!-- End HTML widget -->
+
+			<h2>Vraag 2 inhoud</h2>
+
+			<!-- Start HTML widget -->
+			<div id="test-widget-002" class="hayona-happy">
+				<div class="hayona-happy__form" style="display: none;">
+					<div class="hayona-happy__title">Was this article helpful?</div>
+					<ul class="hayona-happy__answers">
+						<li><a class="hayona-happy__button js-hayona-happy-yes analytics-satisfied-yes" href="#">Yes</a></li>
+						<li><a class="hayona-happy__button js-hayona-happy-no analytics-satisfied-no" href="#">No</a></li>
+					</ul>
+				</div>
+				<div class="hayona-happy__feedback" style="display: none;">
+					<div class="hayona-happy__title">How can we improve?</div>
+					<textarea name="customer-feedback" class="js-hayona-happy-customer-feedback" cols="10" rows="3"></textarea>
+					<button class="hayona-happy__button js-hayona-happy-thanks analytics-satisfied-comment">Send feedback</button>
+				</div>
+				<div class="hayona-happy__thanks" style="display: none;">
+					<div class="hayona-happy__title">Thanks for your feedback!</div>
+				</div>
+			</div>
+			<script>
+				document.addEventListener("DOMContentLoaded", function() {
+					var widget = new Happy( 'test-widget-002', 'Tevredenheid FAQ', 'Vraag 2 inhoud' );
+				});
+			</script>
 			<!-- End HTML widget -->
 
 		</div>
@@ -47,7 +90,6 @@
 
 	<!-- Widget assets -->
 	<link rel="stylesheet" href="../source/happy.css" media="screen">
-	<script src="../source/bower_components/js-cookie/src/js.cookie.js"></script>
 	<script src="../source/happy.js"></script>
 	<!--script src="../source/min/happy-min.js"></script-->
 </body>
