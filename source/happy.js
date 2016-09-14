@@ -34,8 +34,8 @@ var Happy = function( id, category, title ) {
 				self.category, 
 				self.action, 
 				self.translations['Satisfied'], 
-				1,
-				1
+				true,
+				true
 			);
 		}, false);
 
@@ -50,8 +50,8 @@ var Happy = function( id, category, title ) {
 				self.category, 
 				self.action, 
 				self.translations['Dissatisfied'], 
-				0,
-				1
+				false,
+				true
 			);
 		}, false);
 
@@ -66,29 +66,44 @@ var Happy = function( id, category, title ) {
 
 			self.hideElement( 'hayona-happy__feedback' );
 			self.showElement( 'hayona-happy__thanks' );
-			self.trackEvent( self.category, self.action, comment, 0, 0 );
+			self.trackEvent( self.category, self.action, comment, false, false );
 		}, false);
 };
 
 
 /**
  * Show element
+ * 
+ * @description: Set element to display: block; by className
+ * @param {string} className
  */
 Happy.prototype.showElement = function( className ) {
 	var el = this.el.getElementsByClassName( className )[0];
 	el.style.display = 'block';
 };
 
+
 /**
  * Hide element
+ *
+ * @description: Set element to display: hidden; by className
+ * @param {string} className
  */
 Happy.prototype.hideElement = function( className ) {
 	var el = this.el.getElementsByClassName( className )[0];
 	el.style.display = 'none';
 };
 
+
 /**
  * Track event
+ *
+ * @description: Push a GTM custom event with event tracking values and some custom metrics
+ * @param {string} category - Event tracking category
+ * @param {string} action - Event tracking action
+ * @param {string} label - Event tracking label
+ * @param {boolean} isSatisfied - true if event is a positive review
+ * @param {boolean} isReview - true if event is a review
  */
 Happy.prototype.trackEvent = function( category, action, label, isSatisfied, isReview ) {
 
@@ -97,8 +112,8 @@ Happy.prototype.trackEvent = function( category, action, label, isSatisfied, isR
 		eventCategory: category,		// Event tracking category
 		eventAction: action,			// Event tracking action
 		eventLabel: label,				// Event tracking label
-		eventValue: isSatisfied,		// Event tracking value
-		isSatisfied: isSatisfied,		// Custom metric, counts satisfied customers
-		isReview: isReview				// Custom metric, counts number of reviews
+		eventValue: + isSatisfied,		// Event tracking value (convert to number with +)
+		isSatisfied: + isSatisfied,		// Custom metric, counts satisfied customers
+		isReview: + isReview			// Custom metric, counts number of reviews
 	});
 };
