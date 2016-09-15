@@ -89,9 +89,14 @@
 
 	<!-- Widget assets -->
 	<link rel="stylesheet" href="../source/min/happy-min.css" media="screen">
-	<script src="../source/min/happy-min.js"></script>
+	<script src="../source/happy.js"></script>
 	<script>
-		trackWidgets( 'Tevredenheid FAQ' );
+		new Happy({
+			eventCategory: 'Tevredenheid',
+			eventLabelSatisfied: 'Tevreden',
+			eventLabelDissatisfied: 'Ontevreden'
+			// className: 'hallo'
+		});
 	</script>
 </body>
 

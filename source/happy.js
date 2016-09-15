@@ -1,26 +1,61 @@
 /**
- * Happy.js
+ * Happy
  *
- * @description: Get reviews and comments as Google Analytics events
- * @param {string} id - Form wrapper id
- * @param {string} category - Event tracking category
- * @param {string} title - Name of entity that you are reviewing (FAQ item, Page, etc)
+ * @description: Find widgets on page and apply options to them
+ * @param {object} options - See readme.md for all options
+ */
+var Happy = function( options ) {
+
+	// Set properties
+	this.className = options.className || 'happy';
+
+	// Check browser compatibility
+	if( 'addEventListener' in window ) {
+		
+		var widgets = document.getElementsByClassName( this.className );
+		
+		// Loop over all widgets
+		for( var i = 0; i < widgets.length; i++ ) {
+			var widget = new HappyWidget( 
+				widgets[i], 
+				options.eventCategory, 
+				options.eventLabelSatisfied,
+				options.eventLabelDissatisfied
+			);
+		}
+	}
+};
+
+
+
+
+/**
+ * HappyWidget
+ *
+ * @description: Widget object
+ * @param {element} element - Widget wrapper element
+ * @param {string} eventCategory - Translation of the word 'Customer satisfaction'
+ * @param {string} eventLabelSatisfied - Translation of the word 'satisfied'
+ * @param {string} eventLabelDisatisfied - Translation of the word 'dissatisfied'
  */
 
-var Happy = function( el, category ) {
+var HappyWidget = function( element, eventCategory, eventLabelSatisfied, eventLabelDissatisfied ) {
 
 	var self = this;
 
-	// Assign some properties
-	this.el = el;
-	this.category = category;
-	this.action = this.el.dataset.title;
-	this.translations = {
-		'Satisfied': 'Tevreden',
-		'Dissatisfied': 'Ontevreden'
-	};
+	this.el = element;
+	this.eventCategory = eventCategory || 'Customer satisfaction';
+	this.eventLabelSatisfied = eventLabelSatisfied || 'Satisfied';
+	this.eventLabelDissatisfied = eventLabelDissatisfied || 'Dissatisfied';
 
-	// Show form
+	// Retrieve event action from widget title if defined
+	if( typeof( this.el.dataset.title ) === 'undefined' ) {
+		this.eventAction = eventCategory;
+	} else {
+		this.eventAction = this.el.dataset.title;
+	}
+	
+	// Show widget
 	this.showElement( 'happy__review' );
 
 	// Someone clicks yes
@@ -31,7 +66,7 @@ var Happy = function( el, category ) {
 			self.hideElement( 'happy__review' );
 			self.showElement( 'happy__thanks' );
 			self.trackEvent( 
-				self.translations['Satisfied'], 
+				self.eventLabelSatisfied, 
 				true,
 				true
 			);
@@ -45,7 +80,7 @@ var Happy = function( el, category ) {
 			self.hideElement( 'happy__review' );
 			self.showElement( 'happy__comment' );
 			self.trackEvent( 
-				self.translations['Dissatisfied'], 
+				self.eventLabelDissatisfied, 
 				false,
 				true
 			);
@@ -73,7 +108,7 @@ var Happy = function( el, category ) {
  * @description: Set element to display: block; by className
  * @param {string} className
  */
-Happy.prototype.showElement = function( className ) {
+HappyWidget.prototype.showElement = function( className ) {
 	var el = this.el.getElementsByClassName( className )[0];
 	el.style.display = 'block';
 };
@@ -85,7 +120,7 @@ Happy.prototype.showElement = function( className ) {
  * @description: Set element to display: hidden; by className
  * @param {string} className
  */
-Happy.prototype.hideElement = function( className ) {
+HappyWidget.prototype.hideElement = function( className ) {
 	var el = this.el.getElementsByClassName( className )[0];
 	el.style.display = 'none';
 };
@@ -99,40 +134,15 @@ Happy.prototype.hideElement = function( className ) {
  * @param {boolean} isSatisfied - True if event is a positive review
  * @param {boolean} isReview - True if event is a review
  */
-Happy.prototype.trackEvent = function( label, isSatisfied, isReview ) {
+HappyWidget.prototype.trackEvent = function( label, isSatisfied, isReview ) {
 
 	dataLayer.push({
-		event: 'happy',					// Tag Manager Custom Event
-		eventCategory: this.category,	// Event tracking category
-		eventAction: this.action,		// Event tracking action
-		eventLabel: label,				// Event tracking label
-		eventValue: + isSatisfied,		// Event tracking value (convert to number with +)
-		isSatisfied: + isSatisfied,		// Custom metric, counts satisfied customers
-		isReview: + isReview			// Custom metric, counts number of reviews
+		event: 'happy',						// Tag Manager Custom Event
+		eventCategory: this.eventCategory,	// Event tracking category
+		eventAction: this.eventAction,		// Event tracking action
+		eventLabel: label,					// Event tracking label
+		eventValue: + isSatisfied,			// Event tracking value (convert to number with +)
+		isSatisfied: + isSatisfied,			// Custom metric, counts satisfied customers
+		isReview: + isReview				// Custom metric, counts number of reviews
 	});
-};
-
-
-/**
- * Track widgets
- *
- * @description: Helper function to track multiple widgets
- * @param {string} eventCategory - Event tracking category
- * @param {string} className - Widget classname, defaults to 'happy'
- */
-var trackWidgets = function( eventCategory, className ) {
-
-	// Set default className
-	if (typeof className === 'undefined') { className = 'happy'; }
-
-	// Check browser compatibility
-	if( 'addEventListener' in window ) {
-
-		var widgets = document.getElementsByClassName( className );
-		
-		// Loop over all widgets
-		for( var i = 0; i < widgets.length; i++ ) {
-			var widget = new Happy( widgets[i], eventCategory );
-		}
-	}
 };

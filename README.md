@@ -6,14 +6,14 @@ Track reviews and comments as Google Analytics events by pasting a small HTML wi
 
 ## Dependancies
 
-You need Google Tag Manager and Google Analytics installed on your site before you can use this widget.
+You need [Google Tag Manager](https://tagmanager.google.com/) and [Google Analytics](https://analytics.google.com) installed on your site before you can use this widget.
 
 ## Installation
 
 ### Step 1: Include the widget in your page: 
 
 ```xml
-<div class="happy" data-title="{{Edit this}}">
+<div class="happy">
     <div class="happy__review" style="display: none;">
         <div class="happy__title">Was this article helpful?</div>
         <ul class="happy__answers">
@@ -32,18 +32,14 @@ You need Google Tag Manager and Google Analytics installed on your site before y
 </div>
 ```
 
-Fill in the ```data-title``` with the name of the page or section you're getting reviews from. This title will show up as Event Label in Google Analytics. 
-
 ### Step 2: Include JavaScript and CSS 
 
-Include the JavaScript and CSS source files at the bottom of your page, right before the closing ```</body>``` tag. You can edit the event tracking category to something like 'Page satisfaction'.
+Include the JavaScript and CSS source files at the bottom of your page, right before the closing ```</body>``` tag. 
 
 ```xml
 <link rel="stylesheet" href="../source/min/happy-min.css" media="screen">
 <script src="../source/min/happy-min.js"></script>
-<script>
-    trackWidgets( 'Event tracking category' );
-</script> 
+<script>new Happy();</script> 
 ```
 
 ### Step 3: Configure Google Tag Manager
@@ -51,3 +47,39 @@ Include the JavaScript and CSS source files at the bottom of your page, right be
 Inside Google Tag Manager you can read all events from the ```dataLayer``` and send them to Google Analytics. 
 
 Sample container is coming soon.
+
+## Options
+
+### Widget title
+
+You can set a widget title in the ```data-title``` attribute of the widget. This title will show up as Event Action in Google Analytics. For example:
+
+```xml
+<div class="happy" data-title="FAQ: Question #1521">
+```
+
+### Translations
+
+You can provide some translations like this: 
+
+```xml
+<script>
+    new Happy({
+        eventCategory: 'Tevredenheid',
+        eventLabelSatisfied: 'Tevreden',
+        eventLabelDissatisfied: 'Ontevreden'
+    });
+</script>
+```
+
+### Widget class name
+
+Use your own class name like this
+
+```xml
+<script>
+    new Happy({
+        className: 'my-custom-widget-classname'
+    });
+</script>
+```
