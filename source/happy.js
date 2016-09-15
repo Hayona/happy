@@ -21,15 +21,15 @@ var Happy = function( id, category, title ) {
 	};
 
 	// Show form
-	this.showElement( 'hayona-happy__form' );
+	this.showElement( 'happy__review' );
 
 	// Someone clicks yes
 	this.el
-		.getElementsByClassName( 'js-hayona-happy-yes' )[0]
+		.getElementsByClassName( 'js-happy-yes' )[0]
 		.addEventListener('click', function(e) {
 			e.preventDefault();
-			self.hideElement( 'hayona-happy__form' );
-			self.showElement( 'hayona-happy__thanks' );
+			self.hideElement( 'happy__review' );
+			self.showElement( 'happy__comment' );
 			self.trackEvent( 
 				self.translations['Satisfied'], 
 				true,
@@ -39,11 +39,11 @@ var Happy = function( id, category, title ) {
 
 	// Someone clicks no
 	this.el
-		.getElementsByClassName( 'js-hayona-happy-no' )[0]
+		.getElementsByClassName( 'js-happy-no' )[0]
 		.addEventListener('click', function(e) {
 			e.preventDefault();
-			self.hideElement( 'hayona-happy__form' );
-			self.showElement( 'hayona-happy__feedback' );
+			self.hideElement( 'happy__review' );
+			self.showElement( 'happy__comment' );
 			self.trackEvent( 
 				self.translations['Dissatisfied'], 
 				false,
@@ -53,15 +53,15 @@ var Happy = function( id, category, title ) {
 
 	// Someone sends feedback
 	this.el
-		.getElementsByClassName( 'js-hayona-happy-thanks' )[0]
+		.getElementsByClassName( 'js-happy-comment' )[0]
 		.addEventListener('click', function(e) {
 			e.preventDefault();
 			var comment = self.el
-				.getElementsByClassName( 'js-hayona-happy-customer-feedback' )[0]
+				.getElementsByClassName( 'js-happy-feedback' )[0]
 				.value;
 
-			self.hideElement( 'hayona-happy__feedback' );
-			self.showElement( 'hayona-happy__thanks' );
+			self.hideElement( 'happy__comment' );
+			self.showElement( 'happy__thanks' );
 			self.trackEvent( comment, false, false );
 		}, false);
 };

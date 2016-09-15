@@ -1,0 +1,71 @@
+$font-stack: BlinkMacSystemFont,-apple-system,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",Arial,sans-serif;
+
+.happy {
+	margin: 0 0 30px;
+	font: 16px/1.4 $font-stack;
+
+	&__title {
+		margin: 0 0 10px;
+		font-size: 20px;
+	}
+
+	// Review
+
+	&__answers {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+
+		&:after {
+			content: ".";
+			display: block;
+			height: 0;
+			visibility: hidden;
+			clear: both;
+		}
+
+		& > li {
+			float: left;
+			margin-left: 10px;
+
+			&:first-child {
+				margin-left: 0;
+			}
+		}
+	}
+
+	// Buttons
+
+	&__button {
+		display: inline-block;
+		margin: 0;
+		padding: 8px 20px;
+		border: 1px solid #ccc;
+		background-color: #fff;
+		text-decoration: none;
+		transition: all 0.2s ease;
+		color: #444;
+
+		&:hover {
+			border-color: #999;
+		}
+	}
+
+
+	// Forms
+
+	button {
+		font: 16px/1.4 $font-stack;
+		cursor: pointer;
+	}
+
+	textarea,
+	input[type=text] {
+		margin: 0 0 10px;
+		border: 1px solid #ccc;
+		width: 100%;
+		font: 16px/1.4 $font-stack;
+	}
+
+}
+

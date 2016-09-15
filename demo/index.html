@@ -2,12 +2,9 @@
 <html>
    
 <head>
-	<title>happy by Hayona &mdash; demo</title>
+	<title>happy: Track reviews and comments as Google Analytics events</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,ial-scale=1.0" />
-
-	
-
 </head>
 
 <body>
@@ -22,62 +19,74 @@
 	})(window,document,'script','dataLayer','GTM-5T47LN');</script>
 	<!-- End Google Tag Manager -->
 
-	<div class="body__wrapper">
-		<div class="body__header">
-			<img src="hayona.svg" alt="Hayona">
+	<div class="page-wrapper">
+		<div class="page-header">
+			<div class="page-header__title">
+				<h1>Happy demo</h1>
+				<p>Track reviews and comments as Google Analytics events</p>
+			</div>
+			<div class="page-header__logo">
+				<img src="hayona.svg" alt="Hayona">
+			</div>
 		</div>
-		<div class="body__main">
+		<div class="page-main">
 			
-			<h2>Vraag 1 inhoud</h2>
+			<h2>Section 1</h2>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam quis mollitia vel voluptas quibusdam nemo, voluptate ipsa delectus neque ipsam ratione praesentium, modi reprehenderit autem. Tempore fugit, ullam id nobis?
+			</p>
 
 			<!-- Start HTML widget -->
-			<div id="test-widget-001" class="hayona-happy">
-				<div class="hayona-happy__form" style="display: none;">
-					<div class="hayona-happy__title">Was this article helpful?</div>
-					<ul class="hayona-happy__answers">
-						<li><a class="hayona-happy__button js-hayona-happy-yes analytics-satisfied-yes" href="#">Yes</a></li>
-						<li><a class="hayona-happy__button js-hayona-happy-no analytics-satisfied-no" href="#">No</a></li>
+			<div id="happy-001" class="happy">
+				<div class="happy__review" style="display: none;">
+					<div class="happy__title">Was this article helpful?</div>
+					<ul class="happy__answers">
+						<li><a class="happy__button js-happy-yes" href="#">Yes</a></li>
+						<li><a class="happy__button js-happy-no" href="#">No</a></li>
 					</ul>
 				</div>
-				<div class="hayona-happy__feedback" style="display: none;">
-					<div class="hayona-happy__title">How can we improve?</div>
-					<textarea name="customer-feedback" class="js-hayona-happy-customer-feedback" cols="10" rows="3"></textarea>
-					<button class="hayona-happy__button js-hayona-happy-thanks analytics-satisfied-comment">Send feedback</button>
+				<div class="happy__comment" style="display: none;">
+					<div class="happy__title">How can we improve?</div>
+					<textarea name="customer-feedback" class="js-happy-feedback" cols="10" rows="3"></textarea>
+					<button class="happy__button js-happy-comment">Send feedback</button>
 				</div>
-				<div class="hayona-happy__thanks" style="display: none;">
-					<div class="hayona-happy__title">Thanks for your feedback!</div>
+				<div class="happy__thanks" style="display: none;">
+					<div class="happy__title">Thanks for your feedback!</div>
 				</div>
 			</div>
 			<script>
 				document.addEventListener("DOMContentLoaded", function() {
-					var widget = new Happy( 'test-widget-001', 'Tevredenheid FAQ', 'FAQ: Plaats hier de vraag?' );
+					var widget = new Happy( 'happy-001', 'Tevredenheid FAQ', 'Section 1' );
 				});
 			</script>
 			<!-- End HTML widget -->
 
-			<h2>Vraag 2 inhoud</h2>
+			<h2>Section 2</h2>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam quis mollitia vel voluptas quibusdam nemo, voluptate ipsa delectus neque ipsam ratione praesentium, modi reprehenderit autem. Tempore fugit, ullam id nobis?
+			</p>
 
 			<!-- Start HTML widget -->
-			<div id="test-widget-002" class="hayona-happy">
-				<div class="hayona-happy__form" style="display: none;">
-					<div class="hayona-happy__title">Was this article helpful?</div>
-					<ul class="hayona-happy__answers">
-						<li><a class="hayona-happy__button js-hayona-happy-yes analytics-satisfied-yes" href="#">Yes</a></li>
-						<li><a class="hayona-happy__button js-hayona-happy-no analytics-satisfied-no" href="#">No</a></li>
+			<div id="happy-002" class="happy">
+				<div class="happy__review" style="display: none;">
+					<div class="happy__title">Was this article helpful?</div>
+					<ul class="happy__answers">
+						<li><a class="happy__button js-happy-yes" href="#">Yes</a></li>
+						<li><a class="happy__button js-happy-no" href="#">No</a></li>
 					</ul>
 				</div>
-				<div class="hayona-happy__feedback" style="display: none;">
-					<div class="hayona-happy__title">How can we improve?</div>
-					<textarea name="customer-feedback" class="js-hayona-happy-customer-feedback" cols="10" rows="3"></textarea>
-					<button class="hayona-happy__button js-hayona-happy-thanks analytics-satisfied-comment">Send feedback</button>
+				<div class="happy__comment" style="display: none;">
+					<div class="happy__title">How can we improve?</div>
+					<textarea name="customer-feedback" class="js-happy-feedback" cols="10" rows="3"></textarea>
+					<button class="happy__button js-happy-comment">Send feedback</button>
 				</div>
-				<div class="hayona-happy__thanks" style="display: none;">
-					<div class="hayona-happy__title">Thanks for your feedback!</div>
+				<div class="happy__thanks" style="display: none;">
+					<div class="happy__title">Thanks for your feedback!</div>
 				</div>
 			</div>
 			<script>
 				document.addEventListener("DOMContentLoaded", function() {
-					var widget = new Happy( 'test-widget-002', 'Tevredenheid FAQ', 'Vraag 2 inhoud' );
+					var widget = new Happy( 'happy-002', 'Tevredenheid FAQ', 'Vraag 2 inhoud' );
 				});
 			</script>
 			<!-- End HTML widget -->
@@ -89,7 +98,7 @@
 	<link rel="stylesheet" href="./demo.css" media="screen">
 
 	<!-- Widget assets -->
-	<link rel="stylesheet" href="../source/happy.css" media="screen">
+	<link rel="stylesheet" href="../source/min/happy-min.css" media="screen">
 	<script src="../source/happy.js"></script>
 	<!--script src="../source/min/happy-min.js"></script-->
 </body>
