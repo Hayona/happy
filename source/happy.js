@@ -2,8 +2,8 @@
  * Happy.js
  *
  * @description: Get reviews and comments as Google Analytics events
- * @param {string} id - form wrapper id
- * @param {string} category - event tracking category
+ * @param {string} id - Form wrapper id
+ * @param {string} category - Event tracking category
  * @param {string} title - Name of entity that you are reviewing (FAQ item, Page, etc)
  */
 
@@ -31,8 +31,6 @@ var Happy = function( id, category, title ) {
 			self.hideElement( 'hayona-happy__form' );
 			self.showElement( 'hayona-happy__thanks' );
 			self.trackEvent( 
-				self.category, 
-				self.action, 
 				self.translations['Satisfied'], 
 				true,
 				true
@@ -47,8 +45,6 @@ var Happy = function( id, category, title ) {
 			self.hideElement( 'hayona-happy__form' );
 			self.showElement( 'hayona-happy__feedback' );
 			self.trackEvent( 
-				self.category, 
-				self.action, 
 				self.translations['Dissatisfied'], 
 				false,
 				true
@@ -66,7 +62,7 @@ var Happy = function( id, category, title ) {
 
 			self.hideElement( 'hayona-happy__feedback' );
 			self.showElement( 'hayona-happy__thanks' );
-			self.trackEvent( self.category, self.action, comment, false, false );
+			self.trackEvent( comment, false, false );
 		}, false);
 };
 
@@ -99,18 +95,16 @@ Happy.prototype.hideElement = function( className ) {
  * Track event
  *
  * @description: Push a GTM custom event with event tracking values and some custom metrics
- * @param {string} category - Event tracking category
- * @param {string} action - Event tracking action
  * @param {string} label - Event tracking label
- * @param {boolean} isSatisfied - true if event is a positive review
- * @param {boolean} isReview - true if event is a review
+ * @param {boolean} isSatisfied - True if event is a positive review
+ * @param {boolean} isReview - True if event is a review
  */
-Happy.prototype.trackEvent = function( category, action, label, isSatisfied, isReview ) {
+Happy.prototype.trackEvent = function( label, isSatisfied, isReview ) {
 
 	dataLayer.push({
 		event: 'happy',					// Tag Manager Custom Event
-		eventCategory: category,		// Event tracking category
-		eventAction: action,			// Event tracking action
+		eventCategory: this.category,	// Event tracking category
+		eventAction: this.action,		// Event tracking action
 		eventLabel: label,				// Event tracking label
 		eventValue: + isSatisfied,		// Event tracking value (convert to number with +)
 		isSatisfied: + isSatisfied,		// Custom metric, counts satisfied customers
