@@ -15,22 +15,10 @@ $font-stack: BlinkMacSystemFont,-apple-system,"Segoe UI","Roboto","Oxygen","Ubun
 		margin: 0;
 		padding: 0;
 		list-style: none;
-
-		&:after {
-			content: ".";
-			display: block;
-			height: 0;
-			visibility: hidden;
-			clear: both;
-		}
+		display: flex;
 
 		& > li {
-			float: left;
-			margin-left: 10px;
-
-			&:first-child {
-				margin-left: 0;
-			}
+			margin-right: 10px;
 		}
 	}
 

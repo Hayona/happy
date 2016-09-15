@@ -7,14 +7,14 @@
  * @param {string} title - Name of entity that you are reviewing (FAQ item, Page, etc)
  */
 
-var Happy = function( id, category, title ) {
+var Happy = function( id, category ) {
 
 	var self = this;
 
 	// Assign some properties
 	this.el = document.getElementById( id );
 	this.category = category;
-	this.action = title;
+	this.action = this.el.dataset.title;
 	this.translations = {
 		'Satisfied': 'Tevreden',
 		'Dissatisfied': 'Ontevreden'
@@ -29,7 +29,7 @@ var Happy = function( id, category, title ) {
 		.addEventListener('click', function(e) {
 			e.preventDefault();
 			self.hideElement( 'happy__review' );
-			self.showElement( 'happy__comment' );
+			self.showElement( 'happy__thanks' );
 			self.trackEvent( 
 				self.translations['Satisfied'], 
 				true,
@@ -110,4 +110,24 @@ Happy.prototype.trackEvent = function( label, isSatisfied, isReview ) {
 		isSatisfied: + isSatisfied,		// Custom metric, counts satisfied customers
 		isReview: + isReview			// Custom metric, counts number of reviews
 	});
+};
+
+
+/**
+ * Track widgets
+ *
+ * @description: Helper function to track multiple widgets
+ * @param {array} ids - Array of widget ids
+ * @param {string} category - Event tracking category
+ */
+var trackWidgets = function( ids, category ) {
+
+	// Check browser compatibility
+	if( 'addEventListener' in window ) {
+		
+		// Loop over all widgets
+		for( var i = 0; i < ids.length; i++ ) {
+			var widget = new Happy( ids[i], category );
+		}
+	}
 };

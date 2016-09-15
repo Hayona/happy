@@ -2,7 +2,7 @@
 <html>
    
 <head>
-	<title>happy: Track reviews and comments as Google Analytics events</title>
+	<title>Happy — Track reviews and comments as Google Analytics events</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,ial-scale=1.0" />
 </head>
@@ -37,7 +37,7 @@
 			</p>
 
 			<!-- Start HTML widget -->
-			<div id="happy-001" class="happy">
+			<div id="happy-001" class="happy" data-title="Section 1">
 				<div class="happy__review" style="display: none;">
 					<div class="happy__title">Was this article helpful?</div>
 					<ul class="happy__answers">
@@ -54,11 +54,6 @@
 					<div class="happy__title">Thanks for your feedback!</div>
 				</div>
 			</div>
-			<script>
-				document.addEventListener("DOMContentLoaded", function() {
-					var widget = new Happy( 'happy-001', 'Tevredenheid FAQ', 'Section 1' );
-				});
-			</script>
 			<!-- End HTML widget -->
 
 			<h2>Section 2</h2>
@@ -67,7 +62,7 @@
 			</p>
 
 			<!-- Start HTML widget -->
-			<div id="happy-002" class="happy">
+			<div id="happy-002" class="happy" data-title="Vraag 2 inhoud">
 				<div class="happy__review" style="display: none;">
 					<div class="happy__title">Was this article helpful?</div>
 					<ul class="happy__answers">
@@ -84,11 +79,6 @@
 					<div class="happy__title">Thanks for your feedback!</div>
 				</div>
 			</div>
-			<script>
-				document.addEventListener("DOMContentLoaded", function() {
-					var widget = new Happy( 'happy-002', 'Tevredenheid FAQ', 'Vraag 2 inhoud' );
-				});
-			</script>
 			<!-- End HTML widget -->
 
 		</div>
@@ -100,7 +90,15 @@
 	<!-- Widget assets -->
 	<link rel="stylesheet" href="../source/min/happy-min.css" media="screen">
 	<script src="../source/happy.js"></script>
-	<!--script src="../source/min/happy-min.js"></script-->
+	<script>
+		trackWidgets(
+			[
+				'happy-001', 
+				'happy-002'
+			],
+			'Tevredenheid FAQ'
+		);
+	</script>
 </body>
 
 </html>
