@@ -37,7 +37,7 @@
 			</p>
 
 			<!-- Start HTML widget -->
-			<div id="happy-001" class="happy" data-title="Section 1">
+			<div class="happy" data-title="Section 1">
 				<div class="happy__review" style="display: none;">
 					<div class="happy__title">Was this article helpful?</div>
 					<ul class="happy__answers">
@@ -62,7 +62,7 @@
 			</p>
 
 			<!-- Start HTML widget -->
-			<div id="happy-002" class="happy" data-title="Vraag 2 inhoud">
+			<div class="happy" data-title="Vraag 2 inhoud">
 				<div class="happy__review" style="display: none;">
 					<div class="happy__title">Was this article helpful?</div>
 					<ul class="happy__answers">
@@ -89,15 +89,9 @@
 
 	<!-- Widget assets -->
 	<link rel="stylesheet" href="../source/min/happy-min.css" media="screen">
-	<script src="../source/happy.js"></script>
+	<script src="../source/min/happy-min.js"></script>
 	<script>
-		trackWidgets(
-			[
-				'happy-001', 
-				'happy-002'
-			],
-			'Tevredenheid FAQ'
-		);
+		trackWidgets( 'Tevredenheid FAQ' );
 	</script>
 </body>
 

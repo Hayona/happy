@@ -7,12 +7,12 @@
  * @param {string} title - Name of entity that you are reviewing (FAQ item, Page, etc)
  */
 
-var Happy = function( id, category ) {
+var Happy = function( el, category ) {
 
 	var self = this;
 
 	// Assign some properties
-	this.el = document.getElementById( id );
+	this.el = el;
 	this.category = category;
 	this.action = this.el.dataset.title;
 	this.translations = {
@@ -117,17 +117,22 @@ Happy.prototype.trackEvent = function( label, isSatisfied, isReview ) {
  * Track widgets
  *
  * @description: Helper function to track multiple widgets
- * @param {array} ids - Array of widget ids
- * @param {string} category - Event tracking category
+ * @param {string} eventCategory - Event tracking category
+ * @param {string} className - Widget classname, defaults to 'happy'
  */
-var trackWidgets = function( ids, category ) {
+var trackWidgets = function( eventCategory, className ) {
+
+	// Set default className
+	if (typeof className === 'undefined') { className = 'happy'; }
 
 	// Check browser compatibility
 	if( 'addEventListener' in window ) {
+
+		var widgets = document.getElementsByClassName( className );
 		
 		// Loop over all widgets
-		for( var i = 0; i < ids.length; i++ ) {
-			var widget = new Happy( ids[i], category );
+		for( var i = 0; i < widgets.length; i++ ) {
+			var widget = new Happy( widgets[i], eventCategory );
 		}
 	}
 };
