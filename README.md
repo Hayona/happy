@@ -44,9 +44,22 @@ Include the JavaScript and CSS source files at the bottom of your page, right be
 
 ### Step 3: Configure Google Tag Manager
 
-Inside Google Tag Manager you can read all events from the ```dataLayer``` and send them to Google Analytics. 
+Import container.json into your Google Tag Manager account. Add the UA code from your Google Analytics property to the event tag. 
 
-Sample container is coming soon.
+### Step 4: Configure Google Analytics (optional)
+
+Add two custom metrics (type: hit) to your Google Analytics property. Use the values from the table below: 
+
+| Index | Custom metrics |
+|:------|:----------------------|
+| 1 | `Page reviews – satisfied customers` |
+| 2 | `Page reviews – number of reviews` |
+
+Also add a calculated metric (type: percentage) to your Google Analytics views with the formula below. Name it 'Satisfied customers' 
+
+```
+{{Page reviews - satisfied customers}} / {{Page reviews - number of reviews}}
+```
 
 ## Options
 
